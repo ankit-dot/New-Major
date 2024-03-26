@@ -1,8 +1,8 @@
 import {TestModel} from "../models/testModel.js"
 
-exports.testController = async (req, res) => {
+export const getMockTest = async (req, res) => {
     try {
-        const subject = "Math";
+        const subject = req.params.subject;
         const mockTest = await TestModel.find({ subject });
         res.json(mockTest);
     } catch (error) {

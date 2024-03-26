@@ -1,6 +1,9 @@
 import express from 'express';
 import testRoutes from './routes/testRoute.js'
+import noteRoutes from './routes/noteRoute.js'
+import chatRoutes from './routes/chatRoute.js'
 import { dbconnect } from './config/dbConfig.js';
+
 
 
 
@@ -14,7 +17,9 @@ app.get('/', (req, res) => {
 
 
 
-app.use('/test', testRoutes);
+app.use('/api', testRoutes);
+app.use('/api', noteRoutes);
+app.use('/api', chatRoutes)
 
 
 const port = process.env.PORT || 5000;
